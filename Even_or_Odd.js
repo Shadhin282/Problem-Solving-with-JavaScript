@@ -8,6 +8,9 @@
 
 
 function isEven(n) {
+        if(isNaN(n)){
+            return n + " is not a number"
+        }
             if(n%2){        // here % modulus operator is acting as an divider, when result is 1 it clearify that that is true condition as there is a value, that's why it meet first conditon
                 return false;
             } else {  // here result is o from n%2, 0 means a negative result that's why condition is showing false and false condition return;
@@ -17,3 +20,4 @@ function isEven(n) {
 
 console.log(isEven(5));
 console.log(isEven(22));
+console.log((isEven("Hello")))
