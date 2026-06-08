@@ -27,6 +27,42 @@ function countVowels(str) {
     return count;
 }
 
-console.log(countVowels('hello'));      // Output: 2
+function countVowelsOptimize(str){
+
+    if(typeof str !== 'string'){
+        return str + ' is not string.'
+    }
+
+    const lowerStr = str.toLowerCase();
+
+    const regularEx = 'aeiou';
+    let count = 0;
+    for(let i=0; i<lowerStr.length; i++){
+        if(regularEx.includes(lowerStr[i])){
+            count++
+        }
+    }
+
+    return count;
+    
+
+}
+
+function countVowelsOptimzeMatch(str){
+    if(typeof str !== 'string'){
+        return str + ' is not a string.'
+    }
+
+    // regular expression 
+    const vowelRegex = /[aeiou]/gi ;
+
+    const matches = str.match(vowelRegex);
+
+    return matches ? matches.length : 0 ;
+}
+
+
+console.log(countVowelsOptimize('hello'));      // Output: 2
+console.log(countVowelsOptimzeMatch("HellO World"))
 console.log(countVowels('javascript')); // Output: 3
 console.log(countVowels('hello'))
